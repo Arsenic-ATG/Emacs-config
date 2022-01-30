@@ -173,6 +173,14 @@
   :hook (org-mode . efs/org-mode-setup)
   :config
   (setq org-ellipsis " ▾")
+
+  (setq org-agenda-start-with-log-mode t)
+  (setq org-log-done 'time)
+  (setq org-log-into-drawer t)
+
+  (setq org-agenda-files
+        '("~/.emacs.d/org_files"))
+
   (efs/org-font-setup))
 
 (use-package org-bullets
@@ -299,7 +307,7 @@
  '(ivy-mode t)
  '(line-number-mode nil)
  '(package-selected-packages
-   '(visual-fill-column org-bullets magit counsel-projectile doom-themes helpful counsel ivy-rich doom-modeline swiper ivy buffer-move rainbow-delimiters material-theme flycheck smartparens ws-butler dtrt-indent clean-aindent-mode company-c-headers company sr-speedbar ggtags elcord yasnippet which-key use-package try auto-complete))
+   '(org visual-fill-column org-bullets magit counsel-projectile doom-themes helpful counsel ivy-rich doom-modeline swiper ivy buffer-move rainbow-delimiters material-theme flycheck smartparens ws-butler dtrt-indent clean-aindent-mode company-c-headers company sr-speedbar ggtags elcord yasnippet which-key use-package try auto-complete))
  '(sr-speedbar-default-width 30)
  '(sr-speedbar-right-side nil))
 (custom-set-faces
