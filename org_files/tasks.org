@@ -9,14 +9,12 @@ CLOSED: [2022-01-31 Mon 15:19]
   [[file:~/.emacs.d/init.el::"* Checking Email :email:\n\n%?" :clock-in :clock-resume :empty-lines 1)))]]
 
 * Active
-** TODO typeracer
 ** TODO set up forge
 ** TODO properly format init.el
 ** TODO add documentaion for the init file GitHub repo ( prefereably in org mode )
-** TODO read the dragon book
 
 * Projects
-** TODO Project finite autometa
+** ACTIVE Project finite autometa
 *** TODO add algo to simluate finite autometa
 *** TODO add algo to build FA from given regex
 *** TODO add algo to minimise FA
@@ -24,7 +22,7 @@ CLOSED: [2022-01-31 Mon 15:19]
 *** TODO add some more test for liberary
 *** TODO set up some kind of testing framework
 
-** TODO JATE
+** HOLD JATE
 *** TODO make editor open new files
 *** TODO implement a minimal search feature
 *** TODO implement syntax highlithing 
