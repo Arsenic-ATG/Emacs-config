@@ -34,7 +34,7 @@
 ;; Initialize package resources
 (setq package-archives
       '(("GNU" . "http://elpa.gnu.org/packages/")
-	("MELPA" . "http://melpa.org/packages/")
+        ("MELPA" . "http://melpa.org/packages/")
         ("nonGNU" . "https://elpa.nongnu.org/nongnu/")
 	("MELPA Stable" . "http://stable.melpa.org/packages/")))
 
@@ -301,6 +301,38 @@
 (use-package visual-fill-column
   :hook (org-mode . efs/org-mode-visual-fill))
 
+(org-babel-do-load-languages
+  'org-babel-load-languages
+  '((emacs-lisp . t)
+    (python . t)))
+
+(push '("conf-unix" . conf-unix) org-src-lang-modes)
+
+;; Automatically tangle our Emacs.org config file when we save it
+(defun efs/org-babel-tangle-config ()
+  (when (string-equal (buffer-file-name)
+                      (expand-file-name "~/Projects/Code/emacs-from-scratch/Emacs.org"))
+    ;; Dynamic scoping to the rescue
+    (let ((org-confirm-babel-evaluate nil))
+      (org-babel-tangle))))
+
+;;(add-hook 'org-mode-hook (lambda () (add-hook 'after-save-hook #'efs/org-babel-tangle-config)))
+
+;; This is needed as of Org 9.2
+(require 'org-tempo)
+
+(add-to-list 'org-structure-template-alist '("sh" . "src shell"))
+(add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+(add-to-list 'org-structure-template-alist '("py" . "src python"))
+(add-to-list 'org-structure-template-alist '("cpp" . "src cpp"))
+
+(use-package dired-single)
+
+(use-package all-the-icons-dired
+  :hook (dired-mode . all-the-icons-dired-mode))
+
+
+
 ;;;;; C++ specific
 
 (setq apropos-sort-by-scores t)
@@ -410,7 +442,7 @@
  '(ivy-mode t)
  '(line-number-mode nil)
  '(package-selected-packages
-   '(org visual-fill-column org-bullets magit counsel-projectile doom-themes helpful counsel ivy-rich doom-modeline swiper ivy buffer-move rainbow-delimiters material-theme flycheck smartparens ws-butler dtrt-indent clean-aindent-mode company-c-headers company sr-speedbar ggtags elcord yasnippet which-key use-package try auto-complete))
+   '(all-the-icons-dired dired-single org visual-fill-column org-bullets magit counsel-projectile doom-themes helpful counsel ivy-rich doom-modeline swiper ivy buffer-move rainbow-delimiters material-theme flycheck smartparens ws-butler dtrt-indent clean-aindent-mode company-c-headers company sr-speedbar ggtags elcord yasnippet which-key use-package try auto-complete))
  '(sr-speedbar-default-width 30)
  '(sr-speedbar-right-side nil))
 (custom-set-faces
