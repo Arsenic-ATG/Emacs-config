@@ -332,6 +332,11 @@
   :hook (dired-mode . all-the-icons-dired-mode))
 
 
+(use-package multiple-cursors
+  :bind ( ("C-S-c C-S-c" . mc/edit-lines)
+          ( "C->" . mc/mark-next-like-this)
+          ("C-<" . mc/mark-previous-like-this)
+          ("C-c C-<". mc/mark-all-like-this)))
 
 ;;;;; C++ specific
 
@@ -343,8 +348,8 @@
 ;;activate whitespace-mode to view all whitespace characters
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 
-;;show unncessary whitespace
-(add-hook 'prog-mode-hook (lambda () (interactive) (setq show-trailing-whitespace 1)))
+;;show unncessary whitespace ( it's more of a distraction for me rn)
+;;(add-hook 'prog-mode-hook (lambda () (interactive) (setq show-trailing-whitespace 1)))
 
 ;;use space to indent by default
 (setq-default indent-tabs-mode nil)
