@@ -111,6 +111,10 @@
   :config
   (setq which-key-idle-delay 1))
 
+(use-package all-the-icons-ivy-rich
+  :after counsel-projectile
+  :init (all-the-icons-ivy-rich-mode +1))
+
 (use-package ivy-rich
   :ensure t
   :after (counsel)
@@ -342,10 +346,18 @@
 (add-to-list 'org-structure-template-alist '("py" . "src python"))
 (add-to-list 'org-structure-template-alist '("cpp" . "src cpp"))
 
+;; dired config
+
+(use-package dired
+  :ensure nil
+  :commands (dired dired-jump)
+  :bind (("C-x C-j" . dired-jump)))
+
 (use-package dired-single)
 
 (use-package all-the-icons-dired
-  :hook (dired-mode . all-the-icons-dired-mode))
+  :hook (dired-mode . all-the-icons-dired-mode)
+  :init (setq all-the-icons-dired-monochrome nil))
 
 
 (use-package multiple-cursors
@@ -378,19 +390,20 @@
 (dtrt-indent-mode 1)
 
 ;;flycheck for c and c++
-(require 'flycheck)
-(add-hook 'c++-mode-hook 'flycheck-mode)
-(add-hook 'c-mode-hook 'flycheck-mode)
+(use-package flycheck
+  :init (global-flycheck-mode))
 
 ;;aindent and we-butler to clean up useless whitespaces in source
 
-;;clean-aindent-mode
+;; clean auto-indent and backspace unindent
+;;(use-package clean-aident-mode
+;;  :hook prog-mode)
 (require 'clean-aindent-mode)
 (add-hook 'prog-mode-hook 'clean-aindent-mode)
 
-;;ws-butler
-(require 'ws-butler)
-(add-hook 'c-mode-common-hook 'ws-butler-mode)
+;; strip additional whitespaces at the end of lines
+(use-package ws-butler
+  :hook prog-mode)
 
 ;;smartparens
 (require 'smartparens-config)
@@ -426,14 +439,6 @@
 ;;integrating ggtags with imenue
 (setq-local imenu-create-index-function #'ggtags-build-imenu-index)
 
-;;sr-speedbar
-(require 'sr-speedbar)
-;;fix so speedbar is in same window
-(with-eval-after-load "speedbar"
-  (autoload 'sr-speedbar-toggle "sr-speedbar" nil t)
-  (global-set-key (kbd "s-s") 'sr-speedbar-toggle)
-  )
-
 ;;company mode
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
@@ -441,34 +446,3 @@
 ;;company-c-headers
 (require 'company-c-headers)
 (add-to-list 'company-backends 'company-c-headers)
-
-;; stuff emacs added
-(add-to-list 'company-c-headers-path-system "/usr/local/gcc-11/include/c++/12.0.0")
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default bold shadow italic underline bold bold-italic bold])
- '(custom-enabled-themes '(doom-palenight))
- '(custom-safe-themes
-   '("90a6f96a4665a6a56e36dec873a15cbedf761c51ec08dd993d6604e32dd45940" default))
- '(elcord-use-major-mode-as-main-icon t)
- '(flycheck-clang-language-standard "c++2a")
- '(flycheck-gcc-language-standard "c++2a")
- '(hl-sexp-background-color "#1c1f26")
- '(ido-enable-flex-matching t)
- '(initial-buffer-choice "~/.emacs.d/org_files/tasks.org")
- '(ivy-mode t)
- '(line-number-mode nil)
- '(package-selected-packages
-   '(all-the-icons-dired dired-single org visual-fill-column org-bullets magit counsel-projectile doom-themes helpful counsel ivy-rich doom-modeline swiper ivy buffer-move rainbow-delimiters material-theme flycheck smartparens ws-butler dtrt-indent clean-aindent-mode company-c-headers company sr-speedbar ggtags elcord yasnippet which-key use-package try auto-complete))
- '(sr-speedbar-default-width 30)
- '(sr-speedbar-right-side nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
