@@ -396,14 +396,12 @@
 ;;aindent and we-butler to clean up useless whitespaces in source
 
 ;; clean auto-indent and backspace unindent
-;;(use-package clean-aident-mode
-;;  :hook prog-mode)
-(require 'clean-aindent-mode)
-(add-hook 'prog-mode-hook 'clean-aindent-mode)
+(use-package clean-aindent-mode
+  :hook (prog-mode . clean-aindent-mode))
 
 ;; strip additional whitespaces at the end of lines
 (use-package ws-butler
-  :hook prog-mode)
+  :hook (prog-mode . ws-butler-mode))
 
 ;;smartparens
 (require 'smartparens-config)
