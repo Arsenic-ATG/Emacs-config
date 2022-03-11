@@ -366,7 +366,9 @@
           ("C-<" . mc/mark-previous-like-this)
           ("C-c C-<". mc/mark-all-like-this)))
 
-;;;;; C++ specific
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Programming specific ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq apropos-sort-by-scores t)
 
@@ -389,11 +391,14 @@
 (require 'dtrt-indent)
 (dtrt-indent-mode 1)
 
-;;flycheck for c and c++
+;; syntax checking on the fly
 (use-package flycheck
-  :init (global-flycheck-mode))
+  :init (global-flycheck-mode)
+  :config (add-to-list 'flycheck-disabled-checkers 'c/c++-clang))
 
-;;aindent and we-butler to clean up useless whitespaces in source
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Aindent and we-butler to clean up useless whitespaces in source;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; clean auto-indent and backspace unindent
 (use-package clean-aindent-mode
@@ -414,11 +419,11 @@
   (sp-local-pair "/*" "*/" :post-handlers '((" | " "SPC")
                                             ("* ||\n[i]" "RET"))))
 
-;;elcord
-(require 'elcord)
-(elcord-mode)
+;; discord rpc for emacs
+(use-package elcord
+  :init (elcord-mode))
 
-;;ggtags
+;; ggtags ( maybe switch to rtags in future )
 (require 'ggtags)
 (add-hook 'c-mode-common-hook
           (lambda ()
@@ -437,7 +442,7 @@
 ;;integrating ggtags with imenue
 (setq-local imenu-create-index-function #'ggtags-build-imenu-index)
 
-;;company mode
+;; auto complete
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 
