@@ -166,6 +166,13 @@
 (use-package elcord
   :init (elcord-mode))
 
+;;;;;;;;;;;;;;;;
+;; Navigation ;;
+;;;;;;;;;;;;;;;;
+
+(use-package avy
+  :bind ("M-s" . avy-goto-char))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Org Mode Configuration ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
