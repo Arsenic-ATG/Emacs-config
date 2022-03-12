@@ -31,7 +31,9 @@
 (tooltip-mode -1)           ; Disable tooltips
 (set-fringe-mode 10)        ; Give some breathing room
 
-;; Font Configuration ----------------------------------------------------------
+;;;;;;;;;;;;;;;;;;;;;;;;
+;; Font Configuration ;;
+;;;;;;;;;;;;;;;;;;;;;;;;
 
 (set-face-attribute 'default nil :font "Fira Code" :height arsenic/default-font-size)
 
@@ -44,7 +46,10 @@
 (use-package doom-themes
   :init (load-theme 'doom-palenight t))
 
-;; Package Manager Config ------------------------------------------------------
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Package Manager Config ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (require 'package)
 
 ;; Initialize package resources
@@ -156,7 +161,14 @@
   :custom
   (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
 
-;; Org Mode Configuration ------------------------------------------------------
+
+;; discord rpc for emacs
+(use-package elcord
+  :init (elcord-mode))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Org Mode Configuration ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun efs/org-mode-setup ()
   (org-indent-mode)
@@ -419,10 +431,6 @@
   (sp-local-pair "/*" "*/" :post-handlers '((" | " "SPC")
                                             ("* ||\n[i]" "RET"))))
 
-;; discord rpc for emacs
-(use-package elcord
-  :init (elcord-mode))
-
 ;; ggtags ( maybe switch to rtags in future )
 (require 'ggtags)
 (add-hook 'c-mode-common-hook
@@ -441,6 +449,10 @@
 
 ;;integrating ggtags with imenue
 (setq-local imenu-create-index-function #'ggtags-build-imenu-index)
+
+;;;;;;;;;;;;;;;;;;;;;;;;
+;; Code auto complete ;;
+;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; auto complete
 (require 'cc-mode)
