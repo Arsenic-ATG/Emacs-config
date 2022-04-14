@@ -411,10 +411,15 @@
 (require 'dtrt-indent)
 (dtrt-indent-mode 1)
 
+;; Highlight and replace multiple occurances of a text in the buffer
+(use-package iedit)
+
 ;; syntax checking on the fly
 (use-package flycheck
   :init (global-flycheck-mode)
-  :config (add-to-list 'flycheck-disabled-checkers 'c/c++-clang))
+  :config (add-hook 'c-or-c++-mode
+      (lambda ()
+        (setq flycheck-checker "c/c++-gcc"))))
 
 (use-package markdown-mode
   :mode ("README\\.md\\'" . gfm-mode)
