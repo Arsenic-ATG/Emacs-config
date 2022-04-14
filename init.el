@@ -371,6 +371,8 @@
 (use-package dired
   :ensure nil
   :commands (dired dired-jump)
+  :custom ((insert-directory-program "gls" dired-use-ls-dired t)
+           (dired-listing-switches "-agho --group-directories-first"))
   :bind (("C-x C-j" . dired-jump)))
 
 (use-package dired-single)
