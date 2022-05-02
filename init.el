@@ -158,6 +158,14 @@
 (use-package counsel-projectile
   :config (counsel-projectile-mode))
 
+;; highlights uncommitted changes on the left side of the window
+(use-package diff-hl
+  :init
+        (global-diff-hl-mode)  ;; enable it globally
+        (diff-hl-margin-mode)  ;; display changes in margin instead of gutter
+        (diff-hl-flydiff-mode) ;; show hl on the fly
+)
+
 (use-package magit
   :custom
   (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
@@ -321,10 +329,6 @@
       ("w" "Workflows")
       ("we" "Checking Email" entry (file+olp+datetree "~/.emacs.d/org_files/jurnol.org")
            "* Checking Email :email:\n\n%?" :clock-in :clock-resume :empty-lines 1)))
-
-   ;; (define-key global-map (kbd "C-c j")
-   ;;(lambda () (interactive) (org-capture nil "jj")))
-
   (efs/org-font-setup))
 
 (use-package org-bullets
