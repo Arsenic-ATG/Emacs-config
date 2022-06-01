@@ -5,6 +5,7 @@
 ;; Revert Dired and other buffers
 (setq global-auto-revert-non-file-buffers t)
 
+;; Switching windows using M-o
 (global-set-key (kbd "M-o") 'other-window)
 
 ;; keep all the mess at one place
