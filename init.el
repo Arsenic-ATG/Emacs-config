@@ -425,9 +425,8 @@
 ;; syntax checking on the fly
 (use-package flycheck
   :init (global-flycheck-mode)
-  :config (add-hook 'c-or-c++-mode
-      (lambda ()
-        (setq flycheck-checker "c/c++-gcc"))))
+  :custom
+  (flycheck-clang-language-standard "c++2a"))
 
 (use-package markdown-mode
   :mode ("README\\.md\\'" . gfm-mode)
