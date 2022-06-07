@@ -45,7 +45,7 @@
 (set-face-attribute 'variable-pitch nil :font "Cantarell" :height 152 :weight 'regular)
 
 (use-package doom-themes
-    :init (load-theme 'doom-tomorrow-night t))
+    :init (load-theme 'doom-horizon t))
 ;; earlier theme doom-palenight
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
