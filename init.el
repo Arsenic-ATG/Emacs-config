@@ -180,8 +180,9 @@
 ;; Navigation ;;
 ;;;;;;;;;;;;;;;;
 
+;; fast forward direct cursor movement (like ace jump mode)
 (use-package avy
-  :bind ("M-s" . avy-goto-char))
+  :bind ("M-s" . avy-goto-char-timer))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Org Mode Configuration ;;
