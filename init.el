@@ -283,6 +283,11 @@
 ;; follow gnu coding convention by defult
 (setq c-default-style "gnu")
 
+;; clang format to properly format code
+(use-package clang-format
+  :init (setq clang-format-style "GNU")
+  :bind ("C-c f" . clang-format-buffer))
+
 ;;activate whitespace-mode to view all whitespace characters
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 
