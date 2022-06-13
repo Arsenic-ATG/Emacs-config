@@ -301,8 +301,8 @@
 (setq-default tab-width 8)
 
 ;; dtrt-indent: to detect and set indend offset depending on the file being edited
-(require 'dtrt-indent)
-(dtrt-indent-mode 1)
+(use-package dtrt-indent
+  :init (dtrt-indent-global-mode))
 
 ;; Highlight and replace multiple occurances of a text in the buffer
 (use-package iedit)
