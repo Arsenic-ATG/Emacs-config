@@ -1,0 +1,9 @@
+* My personal Emacs configuration
+
+The configuration is mostly inspired from David willson's emacs from scratch searies, plus some extensions to make it fit for my personal workflow and C/C++ development needs.
+
+most of the packages are set up using
+
+**  How to use it
+<WIP>
+
