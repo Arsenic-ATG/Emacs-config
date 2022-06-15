@@ -1,9 +1,33 @@
 * My personal Emacs configuration
 
-The configuration is mostly inspired from David willson's emacs from scratch searies, plus some extensions to make it fit for my personal workflow and C/C++ development needs.
+The configuration is mostly inspired from David willson's [[https://github.com/daviwil/emacs-from-scratch][emacs from scratch series]], plus some extensions to make it fit for my personal workflow and C/C++ development needs.
 
-most of the packages are set up using
+most of the packages are set up using [[https://github.com/jwiegley/use-package][use-package]] declarations, and should make sure to download and install the packages before using it, so you don't have to do it manually. This also means that it might take a *lot of time* the first time you try to set it up.
 
-**  How to use it
+Alternatively, you may use a package manager like [[https://github.com/cask/cask][cask]] to install packages and make that initial setup process relatively smoother.
+
+** Requirements
+
+- [[https://www.gnu.org/software/emacs/download.html][GNU emacs ( tested on 27.2 )]]
+- (optional) [[https://github.com/tonsky/FiraCode][FIra code font]]
+
+** How to use it ?
+
+ - *clone/download*
+
+ - *load the init file:*
+   Now you would want to use this init file (=init.el=) instead of using it's own default init file. This can be done in 2 ways
+   1. replace your default init file with the this file ( you might want to keep a backup of your old config if you go for this option)
+   2. prevent emacs to load your local init file and use this file instead ( using =-q= and =-u= switches )
+   read [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html][this official doc]] for more detailed info about the same.
+
+ - *Start your emacs:*
+
+** Doubts / Query
+feel free to open an issue on GitHub if you face any issue during the installation or have any query regarding the configuration.
+
+** Suggestions for possible improvements ?
+You are more than welcome to leave your suggestions via an Issue or a Pull Request, I would love to hear from you experts out there.
+
+* License
 <WIP>
-
