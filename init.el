@@ -144,6 +144,9 @@
 ;; all the icons required for doom-modeline to work properly
 (use-package all-the-icons :if (display-graphic-p))
 
+;; remove certain minor modes from modeline
+(use-package diminish)
+
 ;; modeline of omega doom
 (use-package doom-modeline
   :custom
