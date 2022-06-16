@@ -103,8 +103,9 @@
   :config
   (ivy-mode 1))
 
+;; All the icons to collect various icon fonts (Enable only in GUI emacs)
 ;; all the icons required for doom-modeline to work properly
-(use-package all-the-icons)
+(use-package all-the-icons :if (display-graphic-p))
 
 ;; modeline of omega doom
 (use-package doom-modeline
