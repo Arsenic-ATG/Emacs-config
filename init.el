@@ -32,6 +32,9 @@
 (tooltip-mode -1)           ; Disable tooltips
 (set-fringe-mode 10)        ; Give some breathing room
 
+(display-time-mode 1)
+(display-battery-mode 1)
+
 ;; Vertical Scroll
 (setq scroll-step 1)
 (setq scroll-margin 1)
