@@ -49,6 +49,26 @@
 (setq hscroll-step 1)
 (setq hscroll-margin 1)
 
+(use-package dashboard
+  :demand
+  :diminish (dashboard-mode page-break-lines-mode)
+  :custom
+  (dashboard-set-heading-icons t)
+  (dashboard-set-navigator t)
+  :config
+  (dashboard-setup-startup-hook)
+    ;; Open Dashboard function
+  (defun open-dashboard ()
+    "Open the *dashboard* buffer and jump to the first widget."
+    (interactive)
+    (if (get-buffer dashboard-buffer-name)
+        (kill-buffer dashboard-buffer-name))
+    (dashboard-insert-startupify-lists)
+    (switch-to-buffer dashboard-buffer-name)
+    (goto-char (point-min))
+    (delete-other-windows)))
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Font Configuration ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
