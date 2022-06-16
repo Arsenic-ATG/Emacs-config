@@ -106,9 +106,17 @@
 ;; all the icons required for doom-modeline to work properly
 (use-package all-the-icons)
 
+;; modeline of omega doom
 (use-package doom-modeline
-  :init (doom-modeline-mode 1)
-  :custom ((doom-modeline-height 10)))
+  :custom
+  ;; Don't compact font caches during GC. Windows Laggy Issue
+  (inhibit-compacting-font-caches t)
+  (doom-modeline-minor-modes t)
+  (doom-modeline-icon t)
+  (doom-modeline-major-mode-color-icon t)
+  (doom-modeline-height 15)
+  :config
+  (doom-modeline-mode))
 
 (column-number-mode)
 (global-display-line-numbers-mode t)
