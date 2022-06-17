@@ -4,8 +4,6 @@ The configuration is mostly inspired from David willson's [[https://github.com/d
 
 most of the packages are set up using [[https://github.com/jwiegley/use-package][use-package]] declarations, and should make sure to download and install the packages before using it, so you don't have to do it manually. This also means that it might take a *lot of time* the first time you try to set it up.
 
-Alternatively, you may use a package manager like [[https://github.com/cask/cask][cask]] to install packages and make that initial setup process relatively smoother.
-
 ** Requirements
 
 - [[https://www.gnu.org/software/emacs/download.html][GNU emacs ( tested on 27.2 )]]
