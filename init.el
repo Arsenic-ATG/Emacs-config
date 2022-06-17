@@ -462,20 +462,73 @@
 ;; auto complete
 (require 'cc-mode)
 
-(require 'company)
-(add-hook 'after-init-hook 'global-company-mode)
-;;(setq company-backends (delete 'company-semantic company-backends))
+;; code snippets ( for more autocomplete )
+(use-package yasnippet
+  :diminish yas-minor-mode
+  :init
+  (use-package yasnippet-snippets :after yasnippet)
+  :hook ((prog-mode LaTeX-mode org-mode markdown-mode) . yas-minor-mode)
+  :bind
+  (:map yas-minor-mode-map ("C-c C-n" . yas-expand-from-trigger-key))
+  (:map yas-keymap
+        (("TAB" . smarter-yas-expand-next-field)
+         ([(tab)] . smarter-yas-expand-next-field)))
+  :config
+  (yas-reload-all)
+  (defun smarter-yas-expand-next-field ()
+    "Try to `yas-expand' then `yas-next-field' at current cursor position."
+    (interactive)
+    (let ((old-point (point))
+          (old-tick (buffer-chars-modified-tick)))
+      (yas-expand)
+      (when (and (eq old-point (point))
+                 (eq old-tick (buffer-chars-modified-tick)))
+        (ignore-errors (yas-next-field))))))
+
+(use-package company
+  :diminish company-mode
+  :hook ((prog-mode LaTeX-mode latex-mode ess-r-mode) . company-mode)
+  :bind
+  (:map company-active-map
+        ([tab] . smarter-tab-to-complete)
+        ("TAB" . smarter-tab-to-complete))
+  :custom
+  (company-minimum-prefix-length 1)
+  (company-tooltip-align-annotations t)
+  (company-require-match 'never)
+  ;; Don't use company in the following modes
+  (company-global-modes '(not shell-mode eaf-mode))
+  ;; Trigger completion immediately.
+  (company-idle-delay 0.1)
+  ;; Number the candidates (use M-1, M-2 etc to select completions).
+  (company-show-numbers t)
+  :config
+  ;;(unless clangd-p (delete 'company-clang company-backends))
+  (global-company-mode 1)
+  (defun smarter-tab-to-complete ()
+    "Try to `org-cycle', `yas-expand', and `yas-next-field' at current cursor position.
+
+If all failed, try to complete the common part with `company-complete-common'"
+    (interactive)
+    (when yas-minor-mode
+      (let ((old-point (point))
+            (old-tick (buffer-chars-modified-tick))
+            (func-list
+             (if (equal major-mode 'org-mode) '(org-cycle yas-expand yas-next-field)
+               '(yas-expand yas-next-field))))
+        (catch 'func-suceed
+          (dolist (func func-list)
+            (ignore-errors (call-interactively func))
+            (unless (and (eq old-point (point))
+                         (eq old-tick (buffer-chars-modified-tick)))
+              (throw 'func-suceed t)))
+          (company-complete-common))))))
 
 ;; company-c-headers ( auto complete c header names )
 (require 'company-c-headers)
 (add-to-list 'company-backends 'company-c-headers)
 ;; let company c headers also complete c++ headers
 (add-to-list 'company-c-headers-path-system "/usr/local/Cellar/gcc/11.2.0/include/c++/11.2.0")
-
-
-;; code snippets ( for more autocomplete )
-(use-package yasnippet
-  :init (yas-global-mode 1))
 
 ;; tab to indent and autocomplete
 (setq tab-always-indent 'complete)
