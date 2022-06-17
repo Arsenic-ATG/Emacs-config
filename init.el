@@ -68,6 +68,9 @@
     (goto-char (point-min))
     (delete-other-windows)))
 
+(use-package page-break-lines
+  :diminish
+  :init (global-page-break-lines-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Font Configuration ;;
