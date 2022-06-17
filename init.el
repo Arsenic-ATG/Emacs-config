@@ -399,9 +399,30 @@
   :hook (prog-mode . ws-butler-mode))
 
 ;; add closing parenthesis with opening ones
-(require 'smartparens-config)
-(show-smartparens-global-mode +1)
-(smartparens-global-mode 1)
+(use-package smartparens
+  :hook (prog-mode . smartparens-mode)
+  :diminish smartparens-mode
+  :bind
+  (:map smartparens-mode-map
+        ("C-M-f" . sp-forward-sexp)
+        ("C-M-b" . sp-backward-sexp)
+        ("C-M-a" . sp-backward-down-sexp)
+        ("C-M-e" . sp-up-sexp)
+        ("C-M-w" . sp-copy-sexp)
+        ("C-M-k" . sp-change-enclosing)
+        ("M-k" . sp-kill-sexp)
+        ("C-M-<backspace>" . sp-splice-sexp-killing-backward)
+        ("C-S-<backspace>" . sp-splice-sexp-killing-around)
+        ("C-]" . sp-select-next-thing-exchange))
+  :custom
+  (sp-escape-quotes-after-insert nil)
+  :config
+  ;; Stop pairing single quotes in elisp
+  (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
+  (sp-local-pair 'org-mode "[" nil :actions nil))
+
+;; Show matching parenthesis
+(show-paren-mode 1)
 
 ;; on RET press, the curly braces automatically add another newline
 (sp-with-modes '(c-mode c++-mode)
