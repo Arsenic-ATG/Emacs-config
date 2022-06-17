@@ -424,16 +424,15 @@
   :config
   ;; Stop pairing single quotes in elisp
   (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
-  (sp-local-pair 'org-mode "[" nil :actions nil))
+  (sp-local-pair 'org-mode "[" nil :actions nil)
+;; on RET press, the curly braces automatically add another newline
+  (sp-with-modes '(c-mode c++-mode)
+    (sp-local-pair "{" nil :post-handlers '(("||\n[i]" "RET")))
+    (sp-local-pair "/*" "*/" :post-handlers '((" | " "SPC")
+                                              ("* ||\n[i]" "RET")))))
 
 ;; Show matching parenthesis
 (show-paren-mode 1)
-
-;; on RET press, the curly braces automatically add another newline
-(sp-with-modes '(c-mode c++-mode)
-  (sp-local-pair "{" nil :post-handlers '(("||\n[i]" "RET")))
-  (sp-local-pair "/*" "*/" :post-handlers '((" | " "SPC")
-                                            ("* ||\n[i]" "RET"))))
 
 ;; ggtags (gnu global tags)
 (use-package ggtags
