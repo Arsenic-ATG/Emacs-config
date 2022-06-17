@@ -68,6 +68,7 @@
     (goto-char (point-min))
     (delete-other-windows)))
 
+;; to draw nice horizontal lines
 (use-package page-break-lines
   :diminish
   :init (global-page-break-lines-mode))
@@ -373,6 +374,7 @@
 
 ;; syntax checking on the fly
 (use-package flycheck
+  :diminish
   :init (global-flycheck-mode)
   :config
   (add-hook 'c++-mode-hook
@@ -388,10 +390,12 @@
 
 ;; clean auto-indent and backspace unindent
 (use-package clean-aindent-mode
+  :diminish
   :hook (prog-mode . clean-aindent-mode))
 
 ;; strip additional whitespaces at the end of lines
 (use-package ws-butler
+  :diminish
   :hook (prog-mode . ws-butler-mode))
 
 ;; add closing parenthesis with opening ones
