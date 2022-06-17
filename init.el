@@ -372,6 +372,11 @@
 ;; Highlight and replace multiple occurances of a text in the buffer
 (use-package iedit)
 
+;; font-locking for "Modern C++"
+(use-package modern-cpp-font-lock
+  :diminish t
+  :init (modern-c++-font-lock-global-mode t))
+
 ;; syntax checking on the fly
 (use-package flycheck
   :diminish
