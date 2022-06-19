@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 41
+;;     Update #: 43
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: .emacs.d global-config
 ;; Compatibility: emacs-version >= 26.1
@@ -44,9 +44,6 @@
 ;;
 ;;; Code:
 
-;; Auto-revert Dired and other buffers
-(setq global-auto-revert-non-file-buffers t)
-
 ;; Replace active region by typing text
 (delete-selection-mode 1)
 
@@ -57,7 +54,6 @@
 ;; Unbind unneeded keys
 (global-set-key (kbd "C-z") nil)
 (global-set-key (kbd "M-z") nil)
-(global-set-key (kbd "M-m") nil)
 (global-set-key (kbd "C-x C-z") nil)
 (global-set-key (kbd "M-/") nil)
 ;; Truncate lines
