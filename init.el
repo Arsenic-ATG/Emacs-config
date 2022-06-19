@@ -367,6 +367,7 @@
 
 ;; dtrt-indent: to detect and set indend offset depending on the file being edited
 (use-package dtrt-indent
+  :diminish
   :init (dtrt-indent-global-mode))
 
 ;; Highlight and replace multiple occurances of a text in the buffer
