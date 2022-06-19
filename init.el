@@ -1,3 +1,18 @@
+(defun update-to-load-path (folder)
+  "Update FOLDER and its subdirectories to `load-path'."
+  (let ((base folder))
+    (unless (member base load-path)
+      (add-to-list 'load-path base))
+    (dolist (f (directory-files base))
+      (let ((name (concat base "/" f)))
+        (when (and (file-directory-p name)
+                   (not (equal f ".."))
+                   (not (equal f ".")))
+          (unless (member base load-path)
+            (add-to-list 'load-path name)))))))
+
+(update-to-load-path (expand-file-name "elisp" user-emacs-directory))
+
 ;; Move customization variables to a separate file and load it
 (setq custom-file (locate-user-emacs-file "custom-vars.el"))
 (load custom-file 'noerror 'nomessage)
@@ -532,3 +547,13 @@ If all failed, try to complete the common part with `company-complete-common'"
 
 ;; tab to indent and autocomplete
 (setq tab-always-indent 'complete)
+
+(use-package header2
+  :load-path (lambda () (expand-file-name "non-melpa-elisp/header2" user-emacs-directory))
+  :custom
+  (header-copyright-notice (concat "Copyright (C) 2019 " (user-full-name) "\n"))
+  :hook (emacs-lisp-mode . auto-make-header)
+  :config
+  (add-to-list 'write-file-functions 'auto-update-file-header)
+  (autoload 'auto-make-header "header2")
+  (autoload 'auto-update-file-header "header2"))
