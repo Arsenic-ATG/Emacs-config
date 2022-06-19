@@ -1,0 +1,3 @@
+[submodule "non-melpa-elisp/header2"]
+	path = non-melpa-elisp/header2
+	url = git@github.com:emacsmirror/header2.git
