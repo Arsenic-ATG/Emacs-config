@@ -9,9 +9,9 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 15
+;;     Update #: 19
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
-;; Keywords: .emacs.d ivy
+;; Keywords: .emacs.d ivy counsel swiper
 ;; Compatibility: emacs-version >= 26.1
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -19,7 +19,7 @@
 ;;; Commentary:
 ;;
 ;; This file contains initialization of packages that deal with
-;; searching (ivy, swiper, counsel)
+;; searching (ivy, swiper, counsel, ivy-rich)
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -48,6 +48,7 @@
 (eval-when-compile
   (require 'init-global-config))
 
+(setq apropos-sort-by-scores t)
 
 (use-package swiper :ensure t)
 
@@ -76,6 +77,23 @@
     (setq ffip-use-rust-fd t))
   :bind (("C-z o" . ffap)
          ("C-z p" . ffip)))
+
+(use-package all-the-icons-ivy-rich
+  :after counsel-projectile
+  :init (all-the-icons-ivy-rich-mode +1))
+
+(use-package ivy-rich
+  :ensure t
+  :after (counsel)
+  :config (ivy-rich-mode 1))
+
+(use-package counsel
+  :bind (("M-x" . counsel-M-x)
+         ("C-x b" . counsel-ibuffer)
+         ("C-x C-f" . counsel-find-file)
+         :map minibuffer-local-map
+         ("C-r" . 'counsel-minibuffer-history)))
+
 
 (provide 'init-search)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
