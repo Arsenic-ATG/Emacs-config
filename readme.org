@@ -1,6 +1,6 @@
 * My personal Emacs configuration
 
-The configuration is mostly inspired from David willson's [[https://github.com/daviwil/emacs-from-scratch][emacs from scratch series]], plus some extensions to make it fit for my personal workflow and C/C++ development needs.
+The configuration is mostly inspired from   [[https://github.com/daviwil/emacs-from-scratch][David willson's emacs from scratch series]] and [[https://github.com/MatthewZMD/.emacs.d][Mingde (Matthew) Zeng's M-Emacs]], plus some extensions to make it fit for my personal workflow and C/C++ development needs.
 
 most of the packages are set up using [[https://github.com/jwiegley/use-package][use-package]] declarations, and should make sure to download and install the packages before using it, so you don't have to do it manually. This also means that it might take a *lot of time* the first time you try to set it up.
 
