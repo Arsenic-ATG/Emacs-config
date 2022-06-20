@@ -51,8 +51,7 @@
   :bind-keymap
   ("C-c p" . projectile-command-map)
   :init
-  (setq projectile-switch-project-action #'projectile-dired)
-  (add-to-list 'projectile-globally-ignored-directories "node_modules"))
+  (setq projectile-switch-project-action #'projectile-dired))
 
 (use-package counsel-projectile
   :config (counsel-projectile-mode))
