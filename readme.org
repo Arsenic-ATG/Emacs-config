@@ -28,4 +28,5 @@ feel free to open an issue on GitHub if you face any issue during the installati
 You are more than welcome to leave your suggestions via an Issue or a Pull Request, I would love to hear from you experts out there.
 
 * License
-<WIP>
+
+All code found in this repository is licensed under  [[./LICENSE][GPL v3]].
