@@ -7,7 +7,7 @@ most of the packages are set up using [[https://github.com/jwiegley/use-package]
 ** Requirements
 
 - [[https://www.gnu.org/software/emacs/download.html][GNU emacs]] (version >= 26.1) ( tested on 27.2 )
-- (optional) [[https://github.com/tonsky/FiraCode][FIra code font]] : you may change font to your preferred one ( see [[./elisp/init-font.el][=./elisp/init-font.el=]] )
+- (optional) [[https://github.com/tonsky/FiraCode][FIra code font]] : you may change font to your preferred one ( see [[./elisp/init-font.el][./elisp/init-font.el]] )
 
 ** Repository structure
 
