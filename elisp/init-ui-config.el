@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 18
+;;     Update #: 24
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: .emacs.d ui
 ;; Compatibility: emacs-version >= 26.1
@@ -88,6 +88,14 @@
 ;; Horizontal Scroll
 (setq hscroll-step 1)
 (setq hscroll-margin 1)
+
+;;;;;;;;;;;;;;;;;;
+;; Tab bar mode ;;
+;;;;;;;;;;;;;;;;;;
+
+;; TODO: set only when emacs-versoin >=27
+(setq tab-bar-new-button nil)
+(setq tab-bar-close-button nil)
 
 (provide 'init-ui-config)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
