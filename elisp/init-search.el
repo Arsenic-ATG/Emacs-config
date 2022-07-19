@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 19
+;;     Update #: 24
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: .emacs.d ivy counsel swiper
 ;; Compatibility: emacs-version >= 26.1
@@ -67,8 +67,11 @@
          :map ivy-reverse-i-search-map
          ("C-k" . ivy-previous-line)
          ("C-d" . ivy-reverse-i-search-kill))
+  :custom
+  (ivy-use-selectable-prompt t "helps to select the text I have entered")
   :config
   (ivy-mode 1))
+
 
 (use-package find-file-in-project
   :if (executable-find "find")
