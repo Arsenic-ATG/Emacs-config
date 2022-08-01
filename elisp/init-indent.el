@@ -49,7 +49,6 @@
 
 ;; use space to indent by default
 (setq-default indent-tabs-mode nil)
-(setq-default indent-line-function 'insert-tab)
 (setq-default tab-width 8)
 (c-set-offset 'comment-intro 0)
 (c-set-offset 'innamespace 0)
