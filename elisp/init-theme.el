@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 13
+;;     Update #: 15
 ;; URL:  https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: theme .emacs.d
 ;; Compatibility: emacs-version >= 26.1
@@ -58,7 +58,7 @@
   (doom-themes-visual-bell-config)
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config)
-  (load-theme 'doom-snazzy t)
+  (load-theme 'doom-old-hope t)
   (defun switch-theme ()
     "An interactive funtion to switch themes."
     (interactive)
