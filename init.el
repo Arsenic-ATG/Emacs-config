@@ -124,13 +124,15 @@
 
 (require 'init-cc)
 
-(require 'init-markdown)
-
-;;;;;;;;;
-;; ORG ;;
-;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;
+;; Techinal writting ;;
+;;;;;;;;;;;;;;;;;;;;;;;
 
 (require 'init-org)
+
+(require 'init-pdf)
+
+(require 'init-markdown)
 
 ;;;;;;;;;;
 ;; Misc ;;
