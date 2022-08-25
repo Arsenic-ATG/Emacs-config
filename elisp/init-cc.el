@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 7
+;;     Update #: 9
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: c c++ cc .emacs.d
 ;; Compatibility: emacs-version >= 26.1
@@ -49,6 +49,7 @@
 ;; clang format to properly format code
 ;; TODO: posibliy replace it with format all
 (use-package clang-format
+  :diminish t
   :init (setq clang-format-style "GNU")
   :bind ("C-c f" . clang-format-buffer))
 
@@ -62,6 +63,7 @@
 
 ;; ggtags (gnu global tags) to jump to symbol definitions
 (use-package ggtags
+  :diminish t
   :init
   (add-hook 'c-mode-common-hook
             (lambda ()

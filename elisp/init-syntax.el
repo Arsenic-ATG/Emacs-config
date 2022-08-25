@@ -10,7 +10,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 18
+;;     Update #: 35
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: flycheck flyspell syntax .emacs.d
 ;; Compatibility: emacs-version >=26.1
@@ -52,7 +52,7 @@
 
 (use-package flycheck
   :defer t
-  :diminish
+  :diminish t
   :hook (after-init . global-flycheck-mode)
   :commands (flycheck-add-mode)
   :custom
@@ -63,6 +63,7 @@
   :init
   (if (display-graphic-p)
       (use-package flycheck-posframe
+        :diminish t
         :custom-face
         (flycheck-posframe-face ((t (:foreground ,(face-foreground 'success)))))
         (flycheck-posframe-info-face ((t (:foreground ,(face-foreground 'success)))))
@@ -75,17 +76,20 @@
         (flycheck-posframe-inhibit-functions
          '((lambda (&rest _) (bound-and-true-p company-backend)))))
     (use-package flycheck-pos-tip
+      :diminish t
       :defines flycheck-pos-tip-timeout
       :hook (flycheck-mode . flycheck-pos-tip-mode)
       :custom (flycheck-pos-tip-timeout 30)))
   :config
   (use-package flycheck-popup-tip
+    :diminish t
     :hook (flycheck-mode . flycheck-popup-tip-mode))
   (when (fboundp 'define-fringe-bitmap)
     (define-fringe-bitmap 'flycheck-fringe-bitmap-double-arrow
       [16 48 112 240 112 48 16] nil nil 'center))
   (when (executable-find "vale")
     (use-package flycheck-vale
+      :diminish t
       :config
       (flycheck-vale-setup)
       (flycheck-add-mode 'vale 'latex-mode)))
@@ -101,7 +105,7 @@
 
 (use-package flyspell
   :ensure nil
-  :diminish
+  :diminish t
   :if (executable-find "aspell")
   :hook (((text-mode outline-mode latex-mode org-mode markdown-mode) . flyspell-mode))
   :custom
