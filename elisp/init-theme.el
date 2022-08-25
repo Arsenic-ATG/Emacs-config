@@ -58,12 +58,21 @@
   (doom-themes-visual-bell-config)
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config)
-  (load-theme 'doom-old-hope t)
+  (load-theme 'doom-monokai-pro t)
   (defun switch-theme ()
     "An interactive funtion to switch themes."
     (interactive)
     (disable-theme (intern (car (mapcar #'symbol-name custom-enabled-themes))))
     (call-interactively #'load-theme)))
+
+;;;;;;;;;;;;;;;;;;;
+;; cursor-beacon ;;
+;;;;;;;;;;;;;;;;;;;
+
+(use-package beacon
+  :diminish t
+  :init
+  (beacon-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Doom modeline config ;;
