@@ -8,7 +8,7 @@
 ;; Version: 1.0
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 76
+;;     Update #: 77
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: init .emacs.d
 ;; Compatibility: emacs-version >= 26.1
@@ -111,6 +111,8 @@
 (require 'init-parens)
 
 (require 'init-indent)
+
+(require 'init-format)
 
 (require 'init-edit)
 
