@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 11
+;;     Update #: 12
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: dashboard .emacs.d
 ;; Compatibility: emacs-version >= 26.1
@@ -60,6 +60,10 @@
   (dashboard-image-banner-max-height 300)
   (dashboard-set-heading-icons t)
   (dashboard-set-navigator t)
+  (dashboard-center-content t)
+  (dashboard-items '((recents  . 5)
+                     (projects . 5)
+                     (agenda . 5)))
   :config
   (dashboard-setup-startup-hook)
     ;; Open Dashboard function
