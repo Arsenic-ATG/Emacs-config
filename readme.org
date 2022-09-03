@@ -25,6 +25,11 @@ emacs-config
 - All The packages download from elpa repositories ( MELPA or GNU-ELPA ) should exist in their default location ( generally =./elpa/= )
 - All the packages that are not available on ELPA repository but are used by this config exist in [[./non-melpa-elisp][=./non-melpa-elisp/=]] directory
 
+** Screenshots
+
+[[./images/ss1.png]]
+[[./images/ss2.png]]
+
 ** How to use it ?
 
  1. *clone/download*
