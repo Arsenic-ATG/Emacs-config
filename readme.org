@@ -21,7 +21,7 @@ emacs-config
 #+END_SRC
 
 - Initialization for similar modes exist in their own =./elisp/init-<package-name>.el= file which is then loaded by the main init.el
-- [[./init.el][init.el]] only initializes the load path and then loads all the initialisatiosns from =./elisp/= directory using =(require 'init-<package-name>)=
+- [[./init.el][init.el]] only initializes the load path and then loads all the initializatiosns from =./elisp/= directory using =(require 'init-<package-name>)=
 - All The packages download from elpa repositories ( MELPA or GNU-ELPA ) should exist in their default location ( generally =./elpa/= )
 - All the packages that are not available on ELPA repository but are used by this config exist in [[./non-melpa-elisp][=./non-melpa-elisp/=]] directory
 
