@@ -96,6 +96,8 @@
 
 (require 'init-dashboard)
 
+(require 'init-tab-bar)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; General Programming ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;
