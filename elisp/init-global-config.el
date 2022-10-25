@@ -44,6 +44,9 @@
 ;;
 ;;; Code:
 
+;; full screen by default
+(toggle-frame-fullscreen)
+
 ;; Replace active region by typing text
 (delete-selection-mode 1)
 
