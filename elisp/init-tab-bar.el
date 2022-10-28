@@ -9,7 +9,7 @@
 ;; Package-Requires: (tab-bar-mode)
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 18
+;;     Update #: 19
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: .emacs.d tab-bar tabs tab-bar-mode
 ;; Compatibility: emacs-version >= 27
