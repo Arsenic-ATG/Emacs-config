@@ -8,7 +8,7 @@
 ;; Version: 1.0
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 77
+;;     Update #: 78
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: init .emacs.d
 ;; Compatibility: emacs-version >= 26.1
@@ -121,6 +121,8 @@
 (require 'init-header)
 
 (require 'init-company)
+
+(require 'init-expand-region)
 
 ;;;;;;;;;;;;;;;;;
 ;; Programming ;;
