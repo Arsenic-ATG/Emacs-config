@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 8
+;;     Update #: 9
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: org .emacs.d
 ;; Compatibility: eamcs-version >= 26.1
@@ -108,6 +108,11 @@
   (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
   (add-to-list 'org-structure-template-alist '("py" . "src python"))
   (add-to-list 'org-structure-template-alist '("cpp" . "src cpp")))
+
+;; org noter: to take interactive notes from pdf documents
+(use-package org-noter
+  :custom
+  (org-noter-always-create-frame nil))
 
 (provide 'init-org)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
