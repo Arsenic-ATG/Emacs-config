@@ -45,7 +45,7 @@
 ;;
 ;;; Code:
 
-
+(setq custom-theme-directory "../themes")
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;; Doom theme config ;;
 ;;;;;;;;;;;;;;;;;;;;;;;
