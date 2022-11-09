@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 16
+;;     Update #: 17
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: dired .emacs.d
 ;; Compatibility:
@@ -84,7 +84,8 @@
                   (local-set-key (kbd "^")
                                  (lambda () (interactive) (find-alternate-file ".."))))))
 
-(use-package dired-single)
+(use-package dired-single
+  :after dired)
 
 (use-package all-the-icons-dired
   :hook (dired-mode . all-the-icons-dired-mode)
