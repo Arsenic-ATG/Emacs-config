@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 9
+;;     Update #: 10
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: org .emacs.d
 ;; Compatibility: eamcs-version >= 26.1
@@ -111,6 +111,7 @@
 
 ;; org noter: to take interactive notes from pdf documents
 (use-package org-noter
+  :commands (org-noter)
   :custom
   (org-noter-always-create-frame nil))
 
