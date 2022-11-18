@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 15
+;;     Update #: 16
 ;; URL:  https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: theme .emacs.d
 ;; Compatibility: emacs-version >= 26.1
@@ -45,20 +45,19 @@
 ;;
 ;;; Code:
 
-(setq custom-theme-directory "../themes")
+(setq custom-theme-directory (expand-file-name "themes" user-emacs-directory))
+
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;; Doom theme config ;;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package doom-themes
-  :custom-face
-  (cursor ((t (:background "BlanchedAlmond"))))
   :config
   ;; flashing mode-line on errors
   (doom-themes-visual-bell-config)
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config)
-  (load-theme 'doom-monokai-pro t)
+  (load-theme 'Arsenic-flate t)
   (defun switch-theme ()
     "An interactive funtion to switch themes."
     (interactive)
