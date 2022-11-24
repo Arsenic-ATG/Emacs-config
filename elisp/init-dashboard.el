@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 12
+;;     Update #: 13
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: dashboard .emacs.d
 ;; Compatibility: emacs-version >= 26.1
@@ -64,9 +64,13 @@
   (dashboard-items '((recents  . 5)
                      (projects . 5)
                      (agenda . 5)))
+  (dashboard-footer-icon (all-the-icons-octicon "dashboard"
+                                                :height 1.1
+                                                :v-adjust -0.05
+                                                :face 'dashboard-banner-logo-title))
   :config
   (dashboard-setup-startup-hook)
-    ;; Open Dashboard function
+  ;; Open Dashboard function
   (defun open-dashboard ()
     "Open the *dashboard* buffer and jump to the first widget."
     (interactive)
