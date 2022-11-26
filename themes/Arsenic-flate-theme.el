@@ -142,6 +142,9 @@ Can be an integer to determine the exact padding."
                  (centaur-tabs-active-bar-face :background yellow)
                  (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected :foreground fg)
                  (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected :foreground fg)
+   ;;;; magit
+                 (magit-filename :foreground orange)
+                 (magit-section-heading :foreground cyan)
    ;;;; css-mode <built-in> / scss-mode
                  (css-proprietary-property :foreground keywords)
    ;;;; doom-modeline
@@ -164,6 +167,13 @@ Can be an integer to determine the exact padding."
                  (flycheck-error   :underline `(:style wave :color ,red)    :background base3)
                  (flycheck-warning :underline `(:style wave :color ,yellow) :background base3)
                  (flycheck-info    :underline `(:style wave :color ,green)  :background base3)
+   ;;;; Dashboard
+                 (dashboard-heading :foreground cyan)
+                 (dashboard-navigator :foreground cyan)
+                 (dashboard-text-banner :foreground cyan)
+                 (dashboard-items-face :foreground blush)
+                 (dashboard-no-items-face :foreground blush)
+                 (dashboard-banner-logo-title :foreground pink)
    ;;;; helm
                  (helm-swoop-target-line-face :foreground pink :inverse-video t)
    ;;;; ivy
