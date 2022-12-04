@@ -142,18 +142,21 @@ Can be an integer to determine the exact padding."
                  (centaur-tabs-active-bar-face :background yellow)
                  (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected :foreground fg)
                  (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected :foreground fg)
-   ;;;; magit
-                 (magit-filename :foreground orange)
-                 (magit-section-heading :foreground cyan)
    ;;;; css-mode <built-in> / scss-mode
                  (css-proprietary-property :foreground keywords)
+   ;;;; Dashboard
+                 (dashboard-heading :foreground cyan)
+                 (dashboard-navigator :foreground cyan)
+                 (dashboard-text-banner :foreground cyan)
+                 (dashboard-items-face :foreground blush)
+                 (dashboard-no-items-face :foreground blush)
+                 (dashboard-banner-logo-title :foreground pink)
    ;;;; doom-modeline
                  (doom-modeline-bar :background cyan)
                  (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
                  (doom-modeline-buffer-path :inherit 'bold :foreground green)
                  (doom-modeline-buffer-project-root :foreground green :weight 'bold)
                  (doom-modeline-buffer-modified :inherit 'bold :foreground orange)
-
 
                  (isearch :foreground base0 :background green)
    ;;;; ediff <built-in>
@@ -167,18 +170,14 @@ Can be an integer to determine the exact padding."
                  (flycheck-error   :underline `(:style wave :color ,red)    :background base3)
                  (flycheck-warning :underline `(:style wave :color ,yellow) :background base3)
                  (flycheck-info    :underline `(:style wave :color ,green)  :background base3)
-   ;;;; Dashboard
-                 (dashboard-heading :foreground cyan)
-                 (dashboard-navigator :foreground cyan)
-                 (dashboard-text-banner :foreground cyan)
-                 (dashboard-items-face :foreground blush)
-                 (dashboard-no-items-face :foreground blush)
-                 (dashboard-banner-logo-title :foreground pink)
    ;;;; helm
                  (helm-swoop-target-line-face :foreground pink :inverse-video t)
    ;;;; ivy
                  (ivy-current-match :background base3)
                  (ivy-minibuffer-match-face-1 :background base1 :foreground base4)
+   ;;;; magit
+                 (magit-filename :foreground orange)
+                 (magit-section-heading :foreground cyan)
    ;;;; markdown-mode
                  (markdown-blockquote-face :inherit 'italic :foreground dark-blue)
                  (markdown-list-face :foreground pink)
@@ -208,8 +207,10 @@ Can be an integer to determine the exact padding."
                  (rainbow-delimiters-depth-4-face :foreground cyan)
                  (rainbow-delimiters-depth-5-face :foreground purple)
                  (rainbow-delimiters-depth-6-face :foreground quince)
-                 (rainbow-delimiters-depth-7-face :foreground green))
-
+                 (rainbow-delimiters-depth-7-face :foreground green)
+  ;;;; which-key
+                 (which-key-command-description-face :foreground purple)
+                 )
   ;;;; Base theme variable overrides
                 ;; ()
                 )
