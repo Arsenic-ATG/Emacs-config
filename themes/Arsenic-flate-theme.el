@@ -151,6 +151,8 @@ Can be an integer to determine the exact padding."
                  (dashboard-items-face :foreground blush)
                  (dashboard-no-items-face :foreground blush)
                  (dashboard-banner-logo-title :foreground pink)
+   ;;;; Dired
+                 (dired-header :foreground cyan)
    ;;;; doom-modeline
                  (doom-modeline-bar :background cyan)
                  (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
