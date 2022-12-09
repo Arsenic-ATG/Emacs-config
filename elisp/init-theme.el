@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 17
+;;     Update #: 18
 ;; URL:  https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: theme .emacs.d
 ;; Compatibility: emacs-version >= 26.1
@@ -63,16 +63,6 @@
     (interactive)
     (disable-theme (intern (car (mapcar #'symbol-name custom-enabled-themes))))
     (call-interactively #'load-theme)))
-
-;;;;;;;;;;;;;;;;;;;
-;; cursor-beacon ;;
-;;;;;;;;;;;;;;;;;;;
-
-(use-package beacon
-  :config
-  (beacon-mode)
-  :custom
-  (beacon-color "#00cecb"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Doom modeline config ;;
