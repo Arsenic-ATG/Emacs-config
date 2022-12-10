@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 19
+;;     Update #: 20
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: dired .emacs.d
 ;; Compatibility:
@@ -72,6 +72,9 @@
   ;; Detect external file changes and auto refresh file
   (auto-revert-use-notify nil)
   (auto-revert-interval 3) ; Auto revert every 3 sec
+  ;; Ignore buffer menu mode otherwise it would annoyingly refresh
+  ;; even when working on buffer list.
+  (global-auto-revert-ignore-modes '(Buffer-menu-mode))
   :config
   ;; Enable global auto-revert
   (global-auto-revert-mode t)
