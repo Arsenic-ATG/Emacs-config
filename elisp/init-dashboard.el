@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 13
+;;     Update #: 14
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: dashboard .emacs.d
 ;; Compatibility: emacs-version >= 26.1
@@ -55,9 +55,9 @@
     ("N" . dashboard-next-section)
     ("F" . dashboard-previous-section)))
   :custom
-  (dashboard-startup-banner (expand-file-name "images/henry2.png" user-emacs-directory))
-  (dashboard-image-banner-max-width 300)
-  (dashboard-image-banner-max-height 300)
+  (dashboard-startup-banner (expand-file-name "images/henry_background.png" user-emacs-directory))
+  (dashboard-image-banner-max-width 400)
+  (dashboard-image-banner-max-height 500)
   (dashboard-set-heading-icons t)
   (dashboard-set-navigator t)
   (dashboard-center-content t)
