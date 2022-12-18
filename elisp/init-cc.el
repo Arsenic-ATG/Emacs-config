@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 10
+;;     Update #: 11
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: c c++ cc .emacs.d
 ;; Compatibility: emacs-version >= 26.1
@@ -47,6 +47,10 @@
 
 ;; follow gnu coding convention by defult
 (setq c-default-style "gnu")
+
+;; Provides syntax highlighting and indentation for CMakeLists.txt and
+;; *.cmake source files.
+(use-package cmake-mode)
 
 ;; font-locking for "Modern C++"
 (use-package modern-cpp-font-lock
