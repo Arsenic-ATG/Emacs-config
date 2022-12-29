@@ -1,0 +1,61 @@
+# This file contains patterns which should be ignored by git when
+# tracking this project.
+
+### Emacs ###
+# -*- mode: gitignore; -*-
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+*.eld
+auto-save-list
+tramp
+.\#*
+
+# custom variables
+custom-vars.el
+
+# Org-mode
+.org-id-locations
+*_archive
+
+# flymake-mode
+*_flymake.*
+
+# elpa packages
+/elpa/
+
+# reftex files
+*.rel
+
+# cask packages
+.cask/
+dist/
+
+# Flycheck
+flycheck_*.el
+
+# projectiles files
+.projectile
+
+# multiple cursors
+*.mc-lists.el
+
+# directory configuration
+.dir-locals.el
+
+# games highscores
+/games/
+
+# native compiled cache
+/eln-cache/
+/transient/
+/url/
+
+# ido mode
+*ido.last
+
+# recent files ( dashboard )
+recentf
+bookmarks
