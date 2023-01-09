@@ -1,4 +1,9 @@
-* My personal Emacs configuration
+#+begin_html
+<p align="center">
+  <img width="300px" src="images/henry_emacs.png" alt="BannerImg">
+</p>
+<h1 align="center">Arsenic's Emacs</h1>
+#+end_html
 
 The configuration is mostly inspired from  [[https://github.com/daviwil/emacs-from-scratch][David willson's emacs from scratch series]] and [[https://github.com/MatthewZMD/.emacs.d][Mingde (Matthew) Zeng's M-Emacs]], plus some extensions to make it fit for my personal workflow and C/C++ development needs.
 
