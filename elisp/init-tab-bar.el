@@ -9,7 +9,7 @@
 ;; Package-Requires: (tab-bar-mode)
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 19
+;;     Update #: 20
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: .emacs.d tab-bar tabs tab-bar-mode
 ;; Compatibility: emacs-version >= 27
@@ -46,15 +46,14 @@
 ;;; Code:
 
 (use-package tab-bar
-  :diminish
   :bind
   ("s-}" . tab-next)
   ("s-{" . tab-previous)
   ("s-t" . tab-bar-new-tab)
   ("s-w" . tab-bar-close-tab)
   :custom
-  (tab-bar-new-button nil)
-  (tab-bar-close-button nil)
+  (tab-bar-new-button-show nil)
+  (tab-bar-close-button-show nil)
   (tab-bar-new-tab-choice "*dashboard*")
   (tab-bar-tab-hints t)
   (tab-bar-select-tab-modifiers '(super)))
