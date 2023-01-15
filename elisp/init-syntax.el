@@ -10,7 +10,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 35
+;;     Update #: 36
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: flycheck flyspell syntax .emacs.d
 ;; Compatibility: emacs-version >=26.1
@@ -52,8 +52,8 @@
 
 (use-package flycheck
   :defer t
-  :diminish t
-  :hook (after-init . global-flycheck-mode)
+  :hook ((after-init . global-flycheck-mode)
+         (c++-mode . (lambda () (setq flycheck-gcc-language-standard (setq flycheck-clang-language-standard "c++2a")))))
   :commands (flycheck-add-mode)
   :custom
   (flycheck-global-modes
@@ -63,7 +63,6 @@
   :init
   (if (display-graphic-p)
       (use-package flycheck-posframe
-        :diminish t
         :custom-face
         (flycheck-posframe-face ((t (:foreground ,(face-foreground 'success)))))
         (flycheck-posframe-info-face ((t (:foreground ,(face-foreground 'success)))))
@@ -76,28 +75,20 @@
         (flycheck-posframe-inhibit-functions
          '((lambda (&rest _) (bound-and-true-p company-backend)))))
     (use-package flycheck-pos-tip
-      :diminish t
       :defines flycheck-pos-tip-timeout
       :hook (flycheck-mode . flycheck-pos-tip-mode)
       :custom (flycheck-pos-tip-timeout 30)))
   :config
   (use-package flycheck-popup-tip
-    :diminish t
     :hook (flycheck-mode . flycheck-popup-tip-mode))
   (when (fboundp 'define-fringe-bitmap)
     (define-fringe-bitmap 'flycheck-fringe-bitmap-double-arrow
       [16 48 112 240 112 48 16] nil nil 'center))
   (when (executable-find "vale")
     (use-package flycheck-vale
-      :diminish t
       :config
       (flycheck-vale-setup)
-      (flycheck-add-mode 'vale 'latex-mode)))
-  "Set flycheck language standards for c++ to c++ 20"
-  (defun init-c++ ()
-    (setq flycheck-gcc-language-standard "c++2a")
-    (setq flycheck-clang-language-standard "c++2a"))
-  )
+      (flycheck-add-mode 'vale 'latex-mode))))
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Flyspell config ;;
