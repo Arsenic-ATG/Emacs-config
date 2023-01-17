@@ -8,7 +8,7 @@
 ;; Version: 1.0
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 26
+;;     Update #: 27
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: packages use-package .emacs.d
 ;; Compatibility: emacs-version >= 26.1
@@ -78,6 +78,11 @@
 
 (eval-and-compile
   (setq use-package-always-ensure t)
+  ;; Setting "use-package-always-demand" would always overrride the
+  ;; deffer and would load all the pacakges on startup, helps when you
+  ;; are running Emacs in deomen mode or can work with large startup
+  ;; time.
+  ;;(setq use-package-always-demand t)
   (setq use-package-expand-minimally t)
   (setq use-package-compute-statistics t)
   (setq use-package-enable-imenu-support t))
@@ -85,6 +90,10 @@
 (eval-when-compile
   (require 'use-package)
   (require 'bind-key))
+
+;; only use exec-path-from-shell when on mac machine.
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
 
 ;;;;;;;;;;;;;;
 ;; diminish ;;
