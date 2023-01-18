@@ -1,6 +1,6 @@
 #+begin_html
 <p align="center">
-  <img width="300px" src="images/henry_emacs.png" alt="BannerImg">
+  <img width="100%" src="images/banner.png" alt="BannerImg">
 </p>
 <h1 align="center">Arsenic's Emacs</h1>
 #+end_html
