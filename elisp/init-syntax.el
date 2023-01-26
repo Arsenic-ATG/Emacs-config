@@ -10,7 +10,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 36
+;;     Update #: 37
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: flycheck flyspell syntax .emacs.d
 ;; Compatibility: emacs-version >=26.1
@@ -52,8 +52,9 @@
 
 (use-package flycheck
   :defer t
-  :hook ((after-init . global-flycheck-mode)
-         (c++-mode . (lambda () (setq flycheck-gcc-language-standard (setq flycheck-clang-language-standard "c++2a")))))
+  :hook
+  (after-init . global-flycheck-mode)
+  (c++-mode . (lambda () (setq flycheck-gcc-language-standard (setq flycheck-clang-language-standard "c++2a"))))
   :commands (flycheck-add-mode)
   :custom
   (flycheck-global-modes
@@ -68,7 +69,6 @@
         (flycheck-posframe-info-face ((t (:foreground ,(face-foreground 'success)))))
         :hook
         (flycheck-mode . flycheck-posframe-mode)
-        (c++-mode . init-c++)
         :custom
         (flycheck-posframe-position 'window-bottom-left-corner)
         (flycheck-posframe-border-width 3)
