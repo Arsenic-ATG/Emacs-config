@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 29
+;;     Update #: 30
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: .emacs.d ui
 ;; Compatibility: emacs-version >= 26.1
@@ -59,6 +59,9 @@
 ;; Display line number and colum number
 (column-number-mode)
 (global-display-line-numbers-mode t)
+
+;; Display the cursor as a vertical bar between characters
+(setq-default cursor-type 'bar)
 
 ;; Disable line numbers for some modes
 (dolist (mode '(org-mode-hook
