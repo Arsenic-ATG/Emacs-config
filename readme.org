@@ -9,9 +9,11 @@ The configuration is mostly inspired from  [[https://github.com/daviwil/emacs-fr
 
 most of the packages are set up using [[https://github.com/jwiegley/use-package][use-package]] declarations, and should make sure to download and install the packages before using it, so you don't have to do it manually. This also means that it might take a *lot of time* the first time you try to set it up.
 
+I personally use [[https://github.com/d12frosted/homebrew-emacs-plus][emacs-plus]] with support for [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Native-Compilation.html][native compilation]] and [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Xwidgets.html][Xwidgets]] support enabled, the configuration should not break otherwise also so if it does, please report it via opening an issue.
+
 ** Requirements
 
-- [[https://www.gnu.org/software/emacs/download.html][GNU emacs]] (version >= 26.1) ( tested on 27.2 )
+- [[https://www.gnu.org/software/emacs/download.html][GNU Emacs]] (version >= 27) ( tested on GNU Emacs 29.0.60 )
 - (optional) [[https://github.com/tonsky/FiraCode][FIra code font]] : you may change font to your preferred one ( see [[./elisp/init-font.el][./elisp/init-font.el]] )
 
 ** Repository structure
@@ -26,7 +28,7 @@ emacs-config
 #+END_SRC
 
 - Initialization for similar modes exist in their own =./elisp/init-<package-name>.el= file which is then loaded by the main init.el
-- [[./init.el][init.el]] only initializes the load path and then loads all the initializatiosns from =./elisp/= directory using =(require 'init-<package-name>)=
+- [[./init.el][init.el]] only initializes the load path and then loads all the configurations from =./elisp/= directory using =(require 'init-<package-name>)=
 - All The packages download from elpa repositories ( MELPA or GNU-ELPA ) should exist in their default location ( generally =./elpa/= )
 - All the packages that are not available on ELPA repository but are used by this config exist in [[./non-melpa-elisp][=./non-melpa-elisp/=]] directory
 
@@ -38,7 +40,7 @@ emacs-config
 ** How to use it ?
 
  1. *clone/download*
-   - Non MELPA packages are provided with the repository as git submodules, you may use =--recurse-submodules= to initialise and update those submodules at the time of pulling.
+   - Non MELPA packages are provided with the repository as git submodules, you may use =--recurse-submodules= to initialize and update those submodules at the time of pulling.
 
    - MELPA packages are not provided and should be installed by =(use-package)= at the time of initial startup in the  appropriate directory ( generally in =elpa/= )
 
@@ -50,8 +52,8 @@ cd Emacs-config
 #+END_SRC
 
  2. *load the init file:*
-   Now you would want to use the provided init file (=init.el=) instead of using it's own default init file. This can be done in 2 ways
-   - replace your default init file with the this file ( you might want to keep a backup of your old config if you go for this option)
+    Now you would want to use the provided init file (=init.el=) instead of using it's own default init file which could be either =~/.emacs.el= or another =.init.el= file, check [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Find-Init.html][this link]] for more information about how to locate your initialization file . This can be done in 2 ways
+   - replace your default user directory (=~/.emacs.d=) with repository ( you might want to keep a backup of your old config if you go for this option),
    - prevent emacs to load your local init file and use this file instead ( using =-q= and =-u= switches )
    read [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html][this official doc]] for more detailed info about the same.
 
