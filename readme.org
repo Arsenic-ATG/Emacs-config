@@ -40,28 +40,28 @@ emacs-config
 ** How to use it ?
 
  1. *clone/download*
-   - Non MELPA packages are provided with the repository as git submodules, you may use =--recurse-submodules= to initialize and update those submodules at the time of pulling.
+    - Non MELPA packages are provided with the repository as git submodules, you may use =--recurse-submodules= to initialize and update those submodules at the time of pulling.
 
-   - MELPA packages are not provided and should be installed by =(use-package)= at the time of initial startup in the  appropriate directory ( generally in =elpa/= )
+    - MELPA packages are not provided and should be installed by =(use-package)= at the time of initial startup in the  appropriate directory ( generally in =elpa/= )
 
-   - Here is how the sequence of commands should look like
+    - Here is how the sequence of commands should look like
 
-#+BEGIN_SRC bash
-git clone --recurse-submodules https://github.com/Arsenic-ATG/Emacs-config.git
-cd Emacs-config
-#+END_SRC
+     #+BEGIN_SRC bash
+     git clone --recurse-submodules https://github.com/Arsenic-ATG/Emacs-config.git
+     cd Emacs-config
+     #+END_SRC
 
- 2. *load the init file:*
-    Now you would want to use the provided init file (=init.el=) instead of using it's own default init file which could be either =~/.emacs.el= or another =.init.el= file, check [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Find-Init.html][this link]] for more information about how to locate your initialization file . This can be done in 2 ways
-   - replace your default user directory (=~/.emacs.d=) with repository ( you might want to keep a backup of your old config if you go for this option),
-   - prevent emacs to load your local init file and use this file instead ( using =-q= and =-u= switches )
-   read [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html][this official doc]] for more detailed info about the same.
+ 2. *load the init file:*\\
+        Now you would want to use the provided init file (=init.el=) instead of using it's own default init file which could be either =~/.emacs.el= or another =.init.el= file, check [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Find-Init.html][this link]] for more information about how to locate your initialization file . This can be done in 2 ways
+    - Replace your default user directory (=~/.emacs.d=) with repository ( you might want to keep a backup of your old config if you go for this option).
+    - Prevent emacs to load your local init file and use this file instead ( using =-q= and =-u= switches )
+    read [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html][this official doc]] for more detailed info about the same.
 
- 3. *Start your EMACS:*
- When launched for the first time, it might take more time than expected as on initial startup =(use-package)= will download and install all the packages ( so make sure to have stable connection to MELPA/GNU-ELPA package repositories )
+ 3. *Start your Emacs:*\\
+        When launched for the first time, it might take more time than expected as on initial startup =(use-package)= will download and install all the packages ( so make sure to have stable connection to MELPA/GNU-ELPA package repositories )
 
- 4. *(optional) Restart EAMCS*
-when all the packages are installed then you may restart the emacs to make sure =(use-package)= did it job correctly.
+ 4. *(optional) Restart Emacs:*\\
+        When all the packages are installed then you may restart the emacs to make sure =(use-package)= did it job correctly.
 
 ** Doubts / Query
 feel free to open an issue on GitHub if you face any issue during the installation or have any query regarding the configuration.
