@@ -8,7 +8,7 @@
 ;; Version: 1.0
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 81
+;;     Update #: 82
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: init .emacs.d
 ;; Compatibility: emacs-version >= 26.1
@@ -152,6 +152,7 @@
 
 (require 'init-elcord)
 
+(require 'init-irc)
 
 (provide 'init)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
