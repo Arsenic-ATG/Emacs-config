@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 20
+;;     Update #: 21
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: dired .emacs.d
 ;; Compatibility:
@@ -85,16 +85,27 @@
                   (local-set-key (kbd "<mouse-2>") #'dired-find-alternate-file)
                   (local-set-key (kbd "RET") #'dired-find-alternate-file)
                   (local-set-key (kbd "^")
-                                 (lambda () (interactive) (find-alternate-file ".."))))))
+                                 (lambda () (interactive) (find-alternate-file "..")))))
+  ;; Hide detailed infromation by default
+  (dired-mode . dired-hide-details-mode))
 
-(use-package dired-single
-  :after dired)
-
+;; Display small icons denoting the file type.
 (use-package all-the-icons-dired
   :after dired
   :hook (dired-mode . all-the-icons-dired-mode)
   :init (setq all-the-icons-dired-monochrome nil))
 
+;;;;;;;;;;;;;;;;;
+;; dired Hacks ;;
+;;;;;;;;;;;;;;;;;
+
+;; Use the current directory buffer to visit the new directory instead
+;; of creating new buffers.
+(use-package dired-single
+  :after dired)
+
+;; Use different colors for differnt file types ( the colors used are
+;; are from flate-theme)
 (use-package dired-rainbow
   :after dired
   :config
@@ -110,6 +121,18 @@
     (dired-rainbow-define compressed "#a29bfe" ("7z" "zip" "bz2" "tgz" "txz" "gz" "xz" "z" "Z" "jar" "war" "ear" "rar" "sar" "xpi" "apk" "xz" "tar"))
     (dired-rainbow-define vc "#424b54" ("git" "gitignore" "gitattributes" "gitmodules"))
     ))
+
+;; Collapse the directory path when there is only one unique path when
+;; entering that directory
+(use-package dired-collapse
+  :after dired-rainbow)
+
+;; List the subdirectories directly below the pointed directory
+(use-package dired-subtree
+  :after dired
+  :bind (:map dired-mode-map
+              ("i" . dired-subtree-insert)
+              (";" . dired-subtree-remove)))
 
 (provide 'init-dired)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
