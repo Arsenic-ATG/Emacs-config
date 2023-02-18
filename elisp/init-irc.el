@@ -1,4 +1,4 @@
-;;; init-theme.el ---  -*- lexical-binding: t -*-
+;;; init-irc.el ---  -*- lexical-binding: t -*-
 ;;
 ;; Filename: init-irc.el
 ;; Description: initialize ERC configuration
@@ -10,7 +10,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 1
+;;     Update #: 2
 ;; URL:  https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: irc erc .emacs.d
 ;; Compatibility: emacs-version >= 26.1
