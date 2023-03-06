@@ -10,7 +10,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 2
+;;     Update #: 3
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: lsp c c++ .emacs.d
 ;; Compatibility: emacs-version >= 26.1
@@ -60,8 +60,7 @@
   (lsp-eldoc-hook nil)
   :bind (:map lsp-mode-map ("C-c C-f" . lsp-format-buffer))
   :hook ((java-mode python-mode go-mode rust-mode
-          js-mode js2-mode typescript-mode web-mode
-          c-mode c++-mode objc-mode) . lsp-deferred)
+          js-mode js2-mode typescript-mode web-mode objc-mode) . lsp-deferred)
   :config
   (defun lsp-update-server ()
     "Update LSP server."
