@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 11
+;;     Update #: 12
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: c c++ cc .emacs.d
 ;; Compatibility: emacs-version >= 26.1
@@ -56,27 +56,6 @@
 (use-package modern-cpp-font-lock
   :diminish t
   :init (modern-c++-font-lock-global-mode t))
-
-;; ggtags (gnu global tags) to jump to symbol definitions
-(use-package ggtags
-  :diminish t
-  :init
-  (add-hook 'c-mode-common-hook
-            (lambda ()
-              (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
-                (ggtags-mode 1))))
-  :bind (:map ggtags-mode-map
-              ("C-c g s" . ggtags-find-other-symbol)
-              ("C-c g h" . ggtags-view-tag-history)
-              ("C-c g r" . ggtags-find-reference)
-              ("C-c g f" . ggtags-find-file)
-              ("C-c g c" . ggtags-create-tags)
-              ("C-c g u" . ggtags-update-tags)
-              ("M-," . pop-tag-mark)
-              )
-  :config
-  ;;integrating ggtags with imenue
-  (setq-local imenu-create-index-function #'ggtags-build-imenu-index))
 
 ;; company-c-headers ( auto complete c header names )
 (require 'company-c-headers)
