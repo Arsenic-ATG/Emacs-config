@@ -10,7 +10,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By: Ankur Saini
-;;     Update #: 12
+;;     Update #: 13
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: web-dev html css php web-mode
 ;; Compatibility: emacs-version >= 26.1
@@ -64,7 +64,7 @@
   (web-mode-enable-auto-closing t)
   (web-mode-enable-auto-opening t)
   (web-mode-enable-auto-pairing t)
-  (web-mode-enable-auto-indentation t)
+  (web-mode-enable-auto-indentation nil)
   :config
   ;; Let smartparens handle auto closing brackets as it does it better
   ;; https://github.com/hlissner/doom-emacs/blob/develop/modules/lang/web/%2Bhtml.el#L56
