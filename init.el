@@ -8,7 +8,7 @@
 ;; Version: 1.0
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 84
+;;     Update #: 85
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: init .emacs.d
 ;; Compatibility: emacs-version >= 26.1
@@ -80,7 +80,9 @@
 
 (require 'init-ace-window)
 
-(require 'init-golden-ratio)
+;; temporary change, might paramanently remove it form config or bring
+;; it back if things doesn't work without it (require
+;; 'init-golden-ratio)
 
 (require 'init-dired)
 
