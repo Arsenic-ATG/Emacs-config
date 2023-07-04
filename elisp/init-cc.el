@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 12
+;;     Update #: 13
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: c c++ cc .emacs.d
 ;; Compatibility: emacs-version >= 26.1
@@ -61,6 +61,10 @@
 (require 'company-c-headers)
 (add-to-list 'company-backends 'company-c-headers)
 ;; let company c headers also complete c++ headers
+;;
+;; TODO: fetch this information form a variables insetaed of
+;; hardcoding it here ( as the path might not be same for all the
+;; devices using the configuration)
 (add-to-list 'company-c-headers-path-system "/usr/local/Cellar/gcc/11.2.0/include/c++/11.2.0")
 
 (provide 'init-cc)
