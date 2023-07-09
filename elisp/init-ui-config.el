@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 30
+;;     Update #: 31
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: .emacs.d ui
 ;; Compatibility: emacs-version >= 26.1
@@ -69,7 +69,8 @@
                 shell-mode-hook
                 eshell-mode-hook
                 doc-view-mode
-                pdf-view-mode-hook))
+                pdf-view-mode-hook
+                xwidget-webkit-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 ;; Display time and battery status in modeline
