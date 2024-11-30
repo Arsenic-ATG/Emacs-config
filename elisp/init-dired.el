@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 21
+;;     Update #: 22
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: dired .emacs.d
 ;; Compatibility:
@@ -54,9 +54,10 @@
   :bind
   (("C-x C-j" . dired-jump))
   :custom
-  ;; Use gnu's ls (macOS: install coreutils first)
-  (insert-directory-program "gls" dired-use-ls-dired t)
+  (insert-directory-program "ls" dired-use-ls-dired t)
   ;; Always delete and copy recursively
+  ;; GNU's "ls" is requried for --group-directories-first
+  ;; (not preinstalled on macOS)
   (dired-listing-switches "-agho --group-directories-first")
   (dired-recursive-deletes 'always)
   (dired-recursive-copies 'always)
@@ -75,17 +76,13 @@
   ;; Ignore buffer menu mode otherwise it would annoyingly refresh
   ;; even when working on buffer list.
   (global-auto-revert-ignore-modes '(Buffer-menu-mode))
+  ;; kill the current buffer when selecting a new directory.
+  ;; (Reduce dired buffer clutter)
+  (dired-kill-when-opening-new-dired-buffer t)
   :config
   ;; Enable global auto-revert
   (global-auto-revert-mode t)
-  ;; Reuse same dired buffer, to prevent numerous buffers while navigating in dired
-  (put 'dired-find-alternate-file 'disabled nil)
   :hook
-  (dired-mode . (lambda ()
-                  (local-set-key (kbd "<mouse-2>") #'dired-find-alternate-file)
-                  (local-set-key (kbd "RET") #'dired-find-alternate-file)
-                  (local-set-key (kbd "^")
-                                 (lambda () (interactive) (find-alternate-file "..")))))
   ;; Hide detailed infromation by default
   (dired-mode . dired-hide-details-mode))
 
@@ -99,13 +96,9 @@
 ;; dired Hacks ;;
 ;;;;;;;;;;;;;;;;;
 
-;; Use the current directory buffer to visit the new directory instead
-;; of creating new buffers.
-(use-package dired-single
-  :after dired)
-
 ;; Use different colors for differnt file types ( the colors used are
 ;; are from flate-theme)
+;; TODO: changing color scheme according to the theme
 (use-package dired-rainbow
   :after dired
   :config
