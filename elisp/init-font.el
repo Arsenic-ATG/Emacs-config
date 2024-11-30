@@ -49,10 +49,10 @@
 (set-face-attribute 'default nil :font "Fira Code" :height arsenic/default-font-size)
 
 ;; Set the fixed pitch face
-(set-face-attribute 'fixed-pitch nil :font "Fira Code" :height 150)
+(set-face-attribute 'fixed-pitch nil :font "Fira Code" :height arsenic/default-font-size)
 
 ;; Set the variable pitch face
-(set-face-attribute 'variable-pitch nil :font "Cantarell" :height 152 :weight 'regular)
+(set-face-attribute 'variable-pitch nil :font "Cantarell" :height arsenic/default-font-size :weight 'regular)
 
 (provide 'init-font)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
