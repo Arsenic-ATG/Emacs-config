@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 13
+;;     Update #: 14
 ;; URL: https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: c c++ cc .emacs.d
 ;; Compatibility: emacs-version >= 26.1
@@ -45,7 +45,7 @@
 ;;
 ;;; Code:
 
-;; follow gnu coding convention by defult
+;; follow gnu coding formatting convention by defult
 (setq c-default-style "gnu")
 
 ;; Provides syntax highlighting and indentation for CMakeLists.txt and
@@ -54,18 +54,17 @@
 
 ;; font-locking for "Modern C++"
 (use-package modern-cpp-font-lock
-  :diminish t
-  :init (modern-c++-font-lock-global-mode t))
+  :diminish t)
 
 ;; company-c-headers ( auto complete c header names )
-(require 'company-c-headers)
+(use-package company-c-headers)
 (add-to-list 'company-backends 'company-c-headers)
 ;; let company c headers also complete c++ headers
 ;;
 ;; TODO: fetch this information form a variables insetaed of
 ;; hardcoding it here ( as the path might not be same for all the
 ;; devices using the configuration)
-(add-to-list 'company-c-headers-path-system "/usr/local/Cellar/gcc/11.2.0/include/c++/11.2.0")
+;; (add-to-list 'company-c-headers-path-system "/usr/local/Cellar/gcc/11.2.0/include/c++/11.2.0")
 
 (provide 'init-cc)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

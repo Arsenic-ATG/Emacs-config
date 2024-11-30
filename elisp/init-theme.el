@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 18
+;;     Update #: 19
 ;; URL:  https://github.com/Arsenic-ATG/Emacs-config
 ;; Keywords: theme .emacs.d
 ;; Compatibility: emacs-version >= 26.1
@@ -70,6 +70,7 @@
 
 ;; All the icons to collect various icon fonts (Enable only in GUI emacs)
 ;; all the icons required for doom-modeline to work properly
+;; use "nerd-icons-install-fonts" if icons are not rendering properly
 (use-package all-the-icons :if (display-graphic-p))
 
 ;; modeline of omega doom

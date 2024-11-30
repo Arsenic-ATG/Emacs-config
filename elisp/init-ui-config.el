@@ -51,6 +51,10 @@
 (tool-bar-mode -1)          ; Disable the toolbar
 (tooltip-mode -1)           ; Disable tooltips
 (set-fringe-mode 10)        ; Give some breathing room
+(if (not (eq system-type 'darwin))
+    (menu-bar-mode -1)      ; Disable menue bar (in all OS apart from macOS)
+; Disabling menu bar on macOS causes some weird UI glitch in full screen mode.
+)
 
 ;; Use "y/n" instead of "yes/no" prompt
 (fset 'yes-or-no-p 'y-or-n-p)
