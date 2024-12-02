@@ -140,27 +140,28 @@
 ;; Programming ;;
 ;;;;;;;;;;;;;;;;;
 
+(require 'init-term)
+
 (require 'init-cc)
 
-(require 'init-webdev)
+;;(require 'init-webdev)
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;; Techinal writting ;;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
-(require 'init-org)
+;;(require 'init-org)
 
-(require 'init-pdf)
+;;(require 'init-pdf)
 
-(require 'init-markdown)
+;;(require 'init-markdown)
 
 ;;;;;;;;;;
 ;; Misc ;;
 ;;;;;;;;;;
 
-(require 'init-elcord)
-
-(require 'init-irc)
+;;(require 'init-elcord)
+;;(require 'init-irc)
 
 (provide 'init)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
